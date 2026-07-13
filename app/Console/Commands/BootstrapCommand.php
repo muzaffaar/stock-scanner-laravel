@@ -31,7 +31,7 @@ class BootstrapCommand extends Command
      */
     public function handle(BootstrapManager $bootstrap)
     {
-        $referenceDate = now('America/New_York');
+        $referenceDate = today('America/New_York');
 
         $this->info('Starting bootstrap...');
 
