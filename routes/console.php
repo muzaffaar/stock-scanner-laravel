@@ -8,4 +8,10 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
 
-Schedule::command('scanner:bootstrap')->timezone('American/New_York')->at('3:30');
+
+Schedule::command('scanner:bootstrap')
+    ->weekdays()
+    ->timezone('America/New_York')
+    ->at('03:00')
+    ->withoutOverlapping()
+    ->onOneServer();
