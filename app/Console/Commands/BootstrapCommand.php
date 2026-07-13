@@ -29,11 +29,13 @@ class BootstrapCommand extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function handle(BootstrapManager $bootstrap)
     {
+        $referenceDate = now('America/New_York');
+
         $this->info('Starting bootstrap...');
 
-        $this->bootstrap->run();
+        $this->bootstrap->run($referenceDate);
 
         $this->info('Bootstrap completed.');
 
